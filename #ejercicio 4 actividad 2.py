@@ -4,10 +4,10 @@ class circulo:
     def __init__(self, radio):
         self.radio = radio
     
-    def areaCiculo(self):
+    def areaCirculo(self):
         return math.pi * math.pow(self.radio, 2)
     
-    def perimetroCiculo(self):
+    def perimetroCirculo(self):
         return 2 * math.pi * self.radio
 
 
@@ -84,15 +84,31 @@ class trapecio:
         return self.base_mayor + self.base_menor + self.lado1 + self.lado2
 
 
-circulo1 = circulo(2)
-rectangulo1 = rectangulo(1,2)
-cuadrado1 = cuadrado(3)
-triangulo1 = trianguloRectangulo(3,5)
-rombo1 = rombo(4,6,3)
-trapecio1 = trapecio(8,5,3,2,4)
+radio = float(input("Ingrese el radio del circulo: "))
+base_rect = float(input("Ingrese la base del rectangulo: "))
+altura_rect = float(input("Ingrese la altura del rectangulo: "))
+lado_cuad = float(input("Ingrese el lado del cuadrado: "))
+base_tri = float(input("Ingrese la base del triangulo rectangulo: "))
+altura_tri = float(input("Ingrese la altura del triangulo rectangulo: "))
+diag_mayor = float(input("Ingrese la diagonal mayor del rombo: "))
+diag_menor = float(input("Ingrese la diagonal menor del rombo: "))
+lado_rombo = float(input("Ingrese el lado del rombo: "))
+base_mayor_trap = float(input("Ingrese la base mayor del trapecio: "))
+base_menor_trap = float(input("Ingrese la base menor del trapecio: "))
+lado1_trap = float(input("Ingrese el lado 1 del trapecio: "))
+lado2_trap = float(input("Ingrese el lado 2 del trapecio: "))
+altura_trap = float(input("Ingrese la altura del trapecio: "))
 
-print(f"El area del circulo es: {circulo1.areaCiculo()}")
-print(f"El perimetro del circulo es: {circulo1.perimetroCiculo()}")
+
+circulo1 = circulo(radio)
+rectangulo1 = rectangulo(base_rect, altura_rect)
+cuadrado1 = cuadrado(lado_cuad)
+triangulo1 = trianguloRectangulo(base_tri, altura_tri)
+rombo1 = rombo(diag_mayor, diag_menor, lado_rombo)
+trapecio1 = trapecio(base_mayor_trap, base_menor_trap, lado1_trap, lado2_trap, altura_trap)
+
+print(f"El area del circulo es: {circulo1.areaCirculo()}")
+print(f"El perimetro del circulo es: {circulo1.perimetroCirculo()}")
 print()
 print(f"El area del rectangulo es: {rectangulo1.areaRectangulo()}")
 print(f"El perimetro del rectangulo es: {rectangulo1.perimetroRectangulo()}")
@@ -101,7 +117,7 @@ print(f"El area del cuadrado es: {cuadrado1.areaCuadrado()}")
 print(f"El perimetro del cuadrado es: {cuadrado1.perimetroCuadrado()}")
 print()
 print(f"El area del triangulo es: {triangulo1.areaTriangulo()}")
-print(f"El perimetro del circulo es: {triangulo1.perimetroTriangulo()}")
+print(f"El perimetro del triangulo es: {triangulo1.perimetroTriangulo()}")
 triangulo1.tipoTriangulo()
 print()
 print(f"El area del rombo es: {rombo1.areaRombo()}")
